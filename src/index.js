@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const connectToDatabase = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,6 +21,9 @@ app.use(async (req, res, next) => {
 });
 
 app.use('/users', userRoutes);
+
+app.use('/products', productRoutes);
+
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

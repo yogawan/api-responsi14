@@ -8,7 +8,7 @@ const connectToDatabase = async () => {
   if (dbInstance) return dbInstance;
   try {
     const client = await MongoClient.connect(uri);
-    dbInstance = client.db('tugas4');
+    dbInstance = client.db('responsi14');
     console.log('Connected to Database');
     return dbInstance;
   } catch (error) {
